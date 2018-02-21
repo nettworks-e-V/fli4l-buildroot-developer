@@ -6,7 +6,8 @@ RUN apt-get autoremove \
  && apt-get update \
  && apt-get install -y \
     screen \
-    tmux
+    tmux \
+    openssh-server
 
-# Switch to user jenkins
-USER jenkins
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
