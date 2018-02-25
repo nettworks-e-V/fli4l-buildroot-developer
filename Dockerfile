@@ -14,8 +14,10 @@ RUN apt-get autoremove \
 
 EXPOSE 22
 RUN mkdir -p /var/run/sshd
-CMD ["/usr/sbin/sshd", "-D"]
 
 USER developer
 RUN cd ~ \
  && ln -s /data/shared/fli4l/.fbr .
+
+USER root
+CMD ["/usr/sbin/sshd", "-D"]
