@@ -6,9 +6,11 @@ RUN apt-get autoremove \
  && apt-get update \
  && apt-get install -y \
     joe \
+    nano \
+    openssh-server \
     screen \
     tmux \
-    openssh-server
+    vim
 
 EXPOSE 22
 RUN mkdir -p /var/run/sshd
